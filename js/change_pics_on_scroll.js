@@ -196,3 +196,7 @@ Promise.all([
     window.addEventListener("resize", scroller.resize);
 
 });
+
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};

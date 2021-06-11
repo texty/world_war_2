@@ -1,18 +1,16 @@
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-	 viewBox="0 0 1045.9 631.9" style="enable-background:new 0 0 1045.9 631.9;" xml:space="preserve">
-
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1045.9 631.9" style="enable-background:new 0 0 1045.9 631.9;" xml:space="preserve">
 
 	<g id="circles-7">
 
 	</g>
 
 	<g id="content-7">
-		<path style="opacity:0.65;fill:#743638;" d="M892.3,342.1v0.1c-76.9,0-139.3,62.4-139.3,139.3s62.4,139.2,139.3,139.2s139.3-62.4,139.3-139.3
+		<path class="brown" d="M892.3,342.1v0.1c-76.9,0-139.3,62.4-139.3,139.3s62.4,139.2,139.3,139.2s139.3-62.4,139.3-139.3
 			S969.3,342.1,892.3,342.1z"/>
 
-		<circle style="opacity:0.65;fill:#CC281A;" cx="704.2" cy="204.6" r="188.1"/>
+		<circle class="pink" cx="704.2" cy="204.6" r="188.1"/>
 
-		<path style="opacity:0.72;fill:#910000;" d="M268.6,95.1L268.6,95.1C268.6,95.1,268.6,95.1,268.6,95.1c-0.1,0-0.1,0-0.1,0v0C126.6,95.2,11.7,210.1,11.7,352
+		<path class="red" d="M268.6,95.1L268.6,95.1C268.6,95.1,268.6,95.1,268.6,95.1c-0.1,0-0.1,0-0.1,0v0C126.6,95.2,11.7,210.1,11.7,352
 			c0,141.9,114.9,256.9,256.8,256.9s256.9-115,256.9-256.9C525.4,210.1,410.5,95.2,268.6,95.1z"/>
 
 		<text transform="matrix(1 0 0 1 226.1655 348.6606)" class="fill-white bold-text font-size-21">близько </text>
@@ -24,6 +22,5 @@
 		<text transform="matrix(1 0 0 1 854.6117 474.2522)" class="fill-white bold-text font-size-21">близько </text>
 		<text transform="matrix(1 0 0 1 830.1117 503.2522)" class="fill-white bold-text font-size-36">3.4 млн</text>
 		<text transform="matrix(1 0 0 1 811.1117 532.2522)" class="fill-white bold-text font-size-21">позбавлено волі</text>
-
 	</g>
 </svg>

@@ -8,12 +8,12 @@
    style="enable-background:new 0 0 1045.9 631.9;">
 
    <g id="circles-1">
-		<circle class="st11" cx="733.1" cy="347.9" r="268.1" id="circle_1_1" style="opacity:0.35;fill:#CC281A;enable-background:new;"/>
-		<circle class="st9" cx="398.7" cy="243.4" r="75.8" id="circle_1_2" style="opacity:0.65;fill:#743638;enable-background:new;"/>
-		<circle class="st7" cx="416.5" cy="357.6" r="33.9" id="circle_1_3" style="fill:#910000;"/>
-		<circle class="st7" cx="436.6" cy="440.3" r="20.1" id="circle_1_4" style="fill:#910000;"/>
-		<circle class="st7" cx="473.7" cy="167.1" r="10.7" id="circle_1_6" style="fill:#910000;" />
-		<circle class="st7" cx="461.8" cy="507.3" r="32.2" id="circle_1_5" style="fill:#910000;"/>
+		<circle class="pink" cx="733.1" cy="347.9" r="268.1" id="circle_1_1" style="opacity:0.35;fill:#CC281A;"/>
+		<circle class="brown" cx="398.7" cy="243.4" r="75.8" id="circle_1_2" style="opacity:0.65;fill:#743638;"/>
+		<circle class="red" cx="416.5" cy="357.6" r="33.9" id="circle_1_3" />
+		<circle class="red" cx="436.6" cy="440.3" r="20.1" id="circle_1_4" />
+		<circle class="red" cx="473.7" cy="167.1" r="10.7" id="circle_1_6" />
+		<circle class="red" cx="461.8" cy="507.3" r="32.2" id="circle_1_5" />
    </g>
 
 	<g id="content-1">
@@ -24,8 +24,8 @@
 		<text transform="matrix(1 0 0 1 64.782 186.6033)" class="font-size-14">союзника Угорщини проти </text>
 		<text transform="matrix(1 0 0 1 64.782 203.4033)" class="font-size-14">Карпатської України.</text>
 
-		<circle cx="473.7" cy="167.1"  r="19.3" style="fill:none;stroke:#910000; stroke-miterlimit:10;"/>
-		<circle class="st10" cx="733.1" cy="347.9"  r="259.4"  style="opacity:0.43;fill:#CC281A;" />
+		<circle cx="473.7" cy="167.1"  r="19.3" style="fill:none; stroke:#910000; stroke-miterlimit:10;"/>
+		<circle cx="733.1" cy="347.9"  r="259.4"  style="opacity:0.43; fill: #CC281A;"/>
 
 		<text transform="matrix(1 0 0 1 367.6106 218.4042)" class="fill-white font-size-14">&gt;</text>
 		<text transform="matrix(1 0 0 1 378.4106 218.4042)" class="fill-white font-size-14">100 тис.</text>
@@ -33,25 +33,25 @@
 		<text transform="matrix(1 0 0 1 340.4106 253.0042)" class="fill-white font-size-14">окупанти загнали </text>
 		<text transform="matrix(1 0 0 1 348.1106 270.3042)" class="fill-white font-size-14">до концтаборів</text>
 		<text transform="matrix(1 0 0 1 439.7303 130.2014)" class="font-size-14">2―6.5 тис.</text>
-		<text transform="matrix(1 0 0 1 408.6304 141.2014)" class="font-size-14" id="text82">загиблих стрільців</text>
-		<text transform="matrix(1 0 0 1 393.8181 362.6507)" class="fill-white font-size-14" id="text86">20 тис.</text>
-		<text transform="matrix(1 0 0 1 440.5275 513.1398)" class="fill-white font-size-14" id="text90">18 тис.</text>
-		<text transform="matrix(1 0 0 1 418.6051 445.8792)" class="fill-white font-size-14" id="text94">7 тис.</text>
-		<text transform="matrix(1 0 0 1 64.7822 264.5049)" class="font-size-14" id="text98">1 вересня 1939 року. </text>
-		<text transform="matrix(1 0 0 1 64.7822 281.3049)" class="font-size-14" id="text100">Напад ІІІ Рейху на Польщу: </text>
-		<text transform="matrix(1 0 0 1 64.7822 298.1049)" class="font-size-14" id="text102">українські жертви в складі </text>
-		<text transform="matrix(1 0 0 1 64.7822 314.9049)" class="font-size-14" id="text104">Війська Польського.</text>
-		<text transform="matrix(1 0 0 1 64.782 377.7153)" class="font-size-14" id="text108">З 21 тисячі розстріляних  </text>
-		<text transform="matrix(1 0 0 1 64.782 394.5153)" class="font-size-14" id="text110">у СРСР офіцерів ВП  </text>
-		<text transform="matrix(1 0 0 1 64.782 411.3153)" class="font-size-14" id="text112">(Катинь, Харків, Мєдноє, </text>
-		<text transform="matrix(1 0 0 1 64.782 428.1153)" class="font-size-14" id="text114">Херсон) — третина українці. </text>
-		<text transform="matrix(1 0 0 1 246.582 428.1153)" class="font-size-14" style="letter-spacing:28;" id="text116"> </text>
-		<text transform="matrix(1 0 0 1 64.7821 494.3022)" class="font-size-14" id="text120">17 вересня 1939–22 червня 1941 року. </text>
-		<text transform="matrix(1 0 0 1 64.7821 511.1022)" class="font-size-14" id="text122">Радянська окупація Галичини і Волині. </text>
-		<text transform="matrix(1 0 0 1 64.7821 527.9022)" class="font-size-14" id="text124">Репресії та розстріли.</text>
-		<text transform="matrix(1 0 0 1 662.0819 337.9789)" class="fill-white font-size-14" id="text128">1.17 млн до 1.25 млн</text>
-		<text transform="matrix(1 0 0 1 668.3818 355.2789)" class="fill-white font-size-14" id="text130">за різними даними </text>
-		<text transform="matrix(1 0 0 1 668.0819 372.5789)" class="fill-white font-size-14" id="text132">Депортації в Сибір </text>
+		<text transform="matrix(1 0 0 1 408.6304 141.2014)" class="font-size-14" >загиблих стрільців</text>
+		<text transform="matrix(1 0 0 1 393.8181 362.6507)" class="fill-white font-size-14">20 тис.</text>
+		<text transform="matrix(1 0 0 1 440.5275 513.1398)" class="fill-white font-size-14">18 тис.</text>
+		<text transform="matrix(1 0 0 1 418.6051 445.8792)" class="fill-white font-size-14">7 тис.</text>
+		<text transform="matrix(1 0 0 1 64.7822 264.5049)" class="font-size-14">1 вересня 1939 року. </text>
+		<text transform="matrix(1 0 0 1 64.7822 281.3049)" class="font-size-14">Напад ІІІ Рейху на Польщу: </text>
+		<text transform="matrix(1 0 0 1 64.7822 298.1049)" class="font-size-14">українські жертви в складі </text>
+		<text transform="matrix(1 0 0 1 64.7822 314.9049)" class="font-size-14">Війська Польського.</text>
+		<text transform="matrix(1 0 0 1 64.782 377.7153)" class="font-size-14">З 21 тисячі розстріляних  </text>
+		<text transform="matrix(1 0 0 1 64.782 394.5153)" class="font-size-14">у СРСР офіцерів ВП  </text>
+		<text transform="matrix(1 0 0 1 64.782 411.3153)" class="font-size-14">(Катинь, Харків, Мєдноє, </text>
+		<text transform="matrix(1 0 0 1 64.782 428.1153)" class="font-size-14">Херсон) — третина українці. </text>
+		<text transform="matrix(1 0 0 1 246.582 428.1153)" class="font-size-14" style="letter-spacing:28;"> </text>
+		<text transform="matrix(1 0 0 1 64.7821 494.3022)" class="font-size-14">17 вересня 1939–22 червня 1941 року. </text>
+		<text transform="matrix(1 0 0 1 64.7821 511.1022)" class="font-size-14">Радянська окупація Галичини і Волині. </text>
+		<text transform="matrix(1 0 0 1 64.7821 527.9022)" class="font-size-14">Репресії та розстріли.</text>
+		<text transform="matrix(1 0 0 1 662.0819 337.9789)" class="fill-white font-size-14">1.17 млн до 1.25 млн</text>
+		<text transform="matrix(1 0 0 1 668.3818 355.2789)" class="fill-white font-size-14">за різними даними </text>
+		<text transform="matrix(1 0 0 1 668.0819 372.5789)" class="fill-white font-size-14">Депортації в Сибір </text>
 
 
 		<g id="g146">
