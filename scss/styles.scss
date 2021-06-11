@@ -27,6 +27,27 @@ svg text {
   font-family: 'ProximaNova', sans-serif;
 }
 
+#map {
+  // background-color: ;
+  width: 100%;
+  height: 1000px;
+}
+
+div#sliderContainer {
+  width: 95%;
+  margin: 30px auto 0 auto;
+
+}
+
+@media(max-width: 800px){
+
+
+  div#sliderContainer{
+      width: 80%;
+  }
+
+  
+}
 
 
 
