@@ -114,25 +114,22 @@ const array_4 = [
 
 const array_5 = [
     {id: "circle_5_1",
-        cx_to:821.5, cy_to:219.5, r_to:63.4,
-        cx_from:773.2, cy_from:219.3, r_from:203, opacity:0.72
+        cx_to:980.1, cy_to:43.9, r_to:29.3,
+        cx_from:762.5, cy_from:337.9, r_from:263.4, opacity:0.65
     },
     {id: "circle_5_2",
-        cx_to:980.1, cy_to:43.9, r_to:29.3,
-        cx_from:907.9, cy_from:510.4, r_from:111.2, opacity:0.72
+        cx_to:950.8, cy_to:167.1, r_to:52.6,
+        cx_from:329.3, cy_from:446, r_from:173.5, opacity:0.65
     },
     {id: "circle_5_3",
-        cx_to:950.8, cy_to:167.1, r_to:52.6,
-        cx_from:474.2, cy_from:452.9, r_from:168.7, opacity:0.72
+        cx_to:980.1, cy_to:90, r_to:13.8,
+        cx_from:483.4, cy_from:142.8, r_from:68.5, opacity:0.65
     },
     {id: "circle_5_4",
-        cx_to:980.1, cy_to:90, r_to:13.8,
-        cx_from:473.8, cy_from:166.06, r_from:43.8, opacity:0.72
-    },
-    {id: "circle_5_5",
         cx_to:1015.1, cy_to:120.9, r_to:7.2,
-        cx_from:413.8, cy_from:236.1, r_from:22.6, opacity:0.72
+        cx_from:430.24225, cy_from:257.33707, r_from:35.2, opacity:0.65
     }
+
 ];
 
 const array_6 = [
