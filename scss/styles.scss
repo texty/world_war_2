@@ -27,6 +27,51 @@ svg text {
   font-family: 'ProximaNova', sans-serif;
 }
 
+main {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.font-size-14 {
+  font-size:14px;
+}
+
+.font-size-36 {
+  font-size:36px;
+}
+
+.font-size-21 {
+  font-size:21px;
+}
+
+.fill-white {
+  fill:#FFFFFF;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.red {
+  opacity:0.72;
+  fill:#910000;
+}
+
+.pink {
+  opacity:0.65;fill:#CC281A;
+}
+
+.brown {
+  opacity:0.65;fill:#743638;
+}
+
+.arrow {
+  fill:none;
+  stroke:#000000;
+  stroke-width:0.5;
+  stroke-miterlimit:10;
+}
+
 
 
 
@@ -61,7 +106,7 @@ body {
 .scroll__text .step {
   width: 60%;
   margin: 0 auto 20vh auto;
-  min-height: 100vh;
+  min-height: 30vh;
   max-height: max-content;
 
   div {
