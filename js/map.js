@@ -1,11 +1,11 @@
 
-var map = new maptalks.Map('map', {
+var mapGheto = new maptalks.Map('mapGheto', {
     center: [33.372536, 49.064028], 
       maxZoom: 12,
       zoom: 7,
-    attributionControl: {
-      'content': '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'
-    },
+    // attributionControl: {
+    //   'content': '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'
+    // },
     // baseLayer: new maptalks.TileLayer('tile', {
     //   urlTemplate: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
     //   subdomains: ['a', 'b', 'c', 'd'],
@@ -25,6 +25,26 @@ var map = new maptalks.Map('map', {
     pitch: 0,
     scrollWheelZoom: false
   });
+
+
+var mapVillage = new maptalks.Map('mapVillage', {
+  center: [33.372536, 49.064028], 
+    maxZoom: 12,
+    zoom: 7,
+  zoomControl: {
+    'position': 'top-left',
+    'slider': false,
+    'zoomLevel': false
+  },
+  layers: [
+    new maptalks.VectorLayer('v')
+  ],
+  minZoom: 7,
+  maxZoom: 10,
+  maxPitch: 0,
+  pitch: 0,
+  scrollWheelZoom: false
+});
   
 
   var mySlider = new rSlider({
@@ -48,73 +68,17 @@ var map = new maptalks.Map('map', {
   
   ]).then(function (data) {
 
-    new maptalks.VectorLayer('admin', data[0]).addTo(map);
+    new maptalks.VectorLayer('admin', data[0]).addTo(mapGheto);
   
   
     window.globalData = data[1];
-    const upa_places = new maptalks.VectorLayer('upa').addTo(map);
-    const obl_markers = new maptalks.VectorLayer('upa_main').addTo(map);
+    const upa_places = new maptalks.VectorLayer('upa').addTo(mapGheto);
+    const obl_markers = new maptalks.VectorLayer('upa_main').addTo(mapGheto);
 
 
     const maxColor = d3.max(data[1].map(d => d.color))
 
-    // var label_point = new maptalks.VectorLayer('label').addTo(map);
-  
-  
-    // const linesLayer = new maptalks.VectorLayer('lines', {
-    // }).addTo(map);
-  
-    // console.log(data[1]);
-  
-    // тут ми додаємо окремі маркери для великих міст, щоб можна буде по кліку на них показувати довідку
-    // let main_places = data[1].filter(d => (d.type.split(", ")[0] == 'oblast' | d.type.split(", ")[0] == 'kray'))
-  
-  
-    // var type_size = {
-    //   // "oblast":40,
-    //   // "kray":40,
-    //   "okruga":25,
-    //   "nadraion":10,
-    //   "raion":10
-    // }
-  
-    // main_places.forEach(function (d) {
-    //   d.child_lat = +d.child_lat;
-    //   d.child_lon = +d.child_lon;
-    //   d.parent_lat = +d.parent_lat;
-    //   d.parent_lon = +d.parent_lon;
-  
-    //   var main_markers = new maptalks.Marker(
-    //     [d.child_lon, d.child_lat], {
-    //     symbol: {
-    //       'markerType': 'ellipse',
-    //       'markerFill': "#ff3d4f",
-    //       'markerFillOpacity': 1,
-    //       'markerLineColor': "#b4b4b4",
-    //       'markerLineWidth': 4,
-    //       'markerWidth': 40,
-    //       'markerHeight': 40
-    //     },
-    //     properties: {
-    //       'date': d.creation_date,
-    //       "place": d.place,
-    //       "parent_node": d.parent_node,
-    //       "type": "child"
-  
-  
-    //     }
-    //   }
-  
-  
-    //   );
-  
-    //   obl_markers.addGeometry(main_markers);
-  
-    //   var tip = new maptalks.ui.ToolTip(d["place"]);
-  
-    //   tip.addTo(main_markers);
-  
-    // });
+   
 
     function getSize(a) {
       if (a < 600) {
@@ -140,11 +104,6 @@ var map = new maptalks.Map('map', {
     data[1].forEach(function (d) {
       d.lat = +d.lat;
       d.lon = +d.lon;
-      // d.parent_lat = +d.parent_lat;
-      // d.parent_lon = +d.parent_lon;
-  
-      // d.type_major =  d.type.split(", ")[0]
-  
     });
   
   
@@ -161,14 +120,7 @@ var map = new maptalks.Map('map', {
           'markerWidth': getSize(d.size),
           'markerHeight': getSize(d.size)
         },
-        // properties: {
-        //   'date': d.creation_date,
-        //   "place": d.place,
-        //   "parent_node": d.parent_node,
-        //   "type": "child"
-  
-  
-        // }
+
       }
   
   
@@ -179,74 +131,6 @@ var map = new maptalks.Map('map', {
       tip.addTo(src);
   
       upa_places.addGeometry(src);
-  
-      // if (
-      //   d.is_single == "FALSE"
-      //   // &&  !(d.type.includes("oblast")) 
-      // ) {
-  
-      //   try {
-      //     var dst = new maptalks.Marker(
-      //       [d.parent_lon, d.parent_lat], {
-      //       symbol: {
-      //         'markerType': 'ellipse',
-      //         'markerFill': "#ff3d4f",
-      //         'markerFillOpacity': 1,
-      //         'markerLineColor': "#b4b4b4",
-      //         'markerLineWidth': 0,
-      //         'markerWidth': type_size[d.type_major],
-      //         'markerHeight': type_size[d.type_major]
-      //       },
-      //       properties: {
-      //         'date': d.creation_date,
-      //         "place": d.place,
-      //         "parent_node": d.parent_node,
-      //         "type": "parent"
-  
-      //       }
-      //     }
-      //     );
-  
-      //     var tip = new maptalks.ui.ToolTip(d["parent_node"]);
-  
-      //     tip.addTo(dst);
-      //   } catch (error) {
-      //     console.error(error);
-      //     console.log(d)
-      //     // expected output: ReferenceError: nonExistentFunction is not defined
-      //     // Note - error messages will vary depending on browser
-      //   }
-  
-  
-  
-      //   upa_places.addGeometry(dst);
-  
-      //   // var line = new maptalks.ArcConnectorLine(src, dst, {
-      //   //   arcDegree: 90,
-      //   //   showOn: 'always',
-      //   //   // arrowStyle: 'classic',
-      //   //   // arrowPlacemet: 'vertex-last', //vertex-first, vertex-last, vertex-firstlast, point
-      //   //   symbol: {
-      //   //     // 'fillColor': "#blue",
-      //   //     // 'fillOpacity': type_opacity[d.type_major],
-      //   //     'lineColor': "#b4b4b4", 
-      //   //     'lineWidth': 0.5,
-      //   //     // 'lineColor': type_color[d.type_major],
-      //   //     // 'lineWidth': type_width[d.type_major],
-      //   //     //'lineWidth': lineWidth,
-      //   //     // 'lineOpacity': 1
-      //   //     // type_opacity[d.type_major]
-      //   //   },
-      //   //   properties: {
-      //   //     'date': d.creation_date,
-      //   //   }
-      //   // });
-  
-  
-      //   // linesLayer.addGeometry(line);
-  
-  
-      // }
   
     });
   

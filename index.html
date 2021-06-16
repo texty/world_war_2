@@ -11,92 +11,9 @@
     
 
 </head>
-<style>
-    main {
-        max-width: 1200px;
-        margin: auto;
-    }
-
-    .st0 {
-        fill-rule: evenodd;
-        clip-rule: evenodd;
-        fill: #E4E4CE;
-    }
-
-    .st1 {
-        fill: none;
-    }
-
-    .font-size-14 {
-        font-size: 14px;
-    }
-
-    .font-size-36 {
-        font-size: 36px;
-    }
-
-    .font-size-21 {
-        font-size: 21px;
-    }
-
-    .fill-white {
-        fill: #FFFFFF;
-    }
-
-    .bold-text {
-        font-weight: bold
-    }
-
-    .red {
-        opacity: 0.72;
-        fill: #910000;
-    }
-
-    .pink {
-        opacity: 0.65;
-        fill: #CC281A;
-    }
-
-    .brown {
-        opacity: 0.65;
-        fill: #743638;
-    }
-
-    .arrow {
-        fill: none;
-        stroke: #000000;
-        stroke-width: 0.5;
-        stroke-miterlimit: 10;
-    }
-
-    .st6 {
-        opacity: 0.72;
-        fill: #910000;
-    }
-
-    .st7 {
-        opacity: 0.65;
-        fill: #CC281A;
-    }
-
-    .st8 {
-        opacity: 0.65;
-        fill: #743638;
-    }
-
-    .st9 {
-        fill: #FFFFFF;
-    }
-
-    .st11 {
-        fill-rule: evenodd;
-        clip-rule: evenodd;
-        fill: none;
-    }
-</style>
-
 <body>
-    <div id="map"></div>
+    <div id="mapGheto" class="map"></div>
+    <div id="mapVillage" class="map"></div>
     <div id=sliderContainer>
         <input type="range " id="sampleSlider" />
     </div>
@@ -115,101 +32,28 @@
 
                 <div id="chart"></div>
 
+        <!-- текстовий блок -->
+        <div class='scroll__text'>
+            <div class='step' data-step='0'>
+
             </div>
 
-            <!-- текстовий блок -->
-            <div class='scroll__text'>
-                <div class='step' data-step='0'>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum et metus vel pharetra.
-                            Integer id odio est. Phasellus est lorem, viverra ac bibendum eget, condimentum nec mauris.
-                            Donec gravida suscipit velit a laoreet. Donec ante tortor, sodales et ante at, ullamcorper
-                            varius elit. Proin in diam eu ipsum tincidunt mollis convallis vel tortor. Donec maximus
-                            blandit magna. Proin in ligula quis quam vulputate vestibulum. Nullam diam nisi, malesuada a
-                            suscipit pharetra, congue id lectus. Sed congue felis non eleifend facilisis. Donec
-                            vulputate, leo id molestie finibus, lorem nibh rutrum odio, id pulvinar odio massa in lacus.
-                        </p>
-                    </div>
-                </div>
+            <div class='step' data-step='1'>
+            </div>
 
-                <div class='step' data-step='1'>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum et metus vel pharetra.
-                            Integer id odio est. Phasellus est lorem, viverra ac bibendum eget, condimentum nec mauris.
-                            Donec gravida suscipit velit a laoreet. Donec ante tortor, sodales et ante at, ullamcorper
-                            varius elit. Proin in diam eu ipsum tincidunt mollis convallis vel tortor. Donec maximus
-                            blandit magna. Proin in ligula quis quam vulputate vestibulum. Nullam diam nisi, malesuada a
-                            suscipit pharetra, congue id lectus. Sed congue felis non eleifend facilisis. Donec
-                            vulputate, leo id molestie finibus, lorem nibh rutrum odio, id pulvinar odio massa in lacus.
-                        </p>
-                    </div>
-                </div>
+            <div class='step' data-step='2'>
+            </div>
 
-                <div class='step' data-step='2'>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum et metus vel pharetra.
-                            Integer id odio est. Phasellus est lorem, viverra ac bibendum eget, condimentum nec mauris.
-                            Donec gravida suscipit velit a laoreet. Donec ante tortor, sodales et ante at, ullamcorper
-                            varius elit. Proin in diam eu ipsum tincidunt mollis convallis vel tortor. Donec maximus
-                            blandit magna. Proin in ligula quis quam vulputate vestibulum. Nullam diam nisi, malesuada a
-                            suscipit pharetra, congue id lectus. Sed congue felis non eleifend facilisis. Donec
-                            vulputate, leo id molestie finibus, lorem nibh rutrum odio, id pulvinar odio massa in lacus.
-                        </p>
-                    </div>
-                </div>
+            <div class='step' data-step='3'>
+            </div>
 
-                <div class='step' data-step='3'>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum et metus vel pharetra.
-                            Integer id odio est. Phasellus est lorem, viverra ac bibendum eget, condimentum nec mauris.
-                            Donec gravida suscipit velit a laoreet. Donec ante tortor, sodales et ante at, ullamcorper
-                            varius elit. Proin in diam eu ipsum tincidunt mollis convallis vel tortor. Donec maximus
-                            blandit magna. Proin in ligula quis quam vulputate vestibulum. Nullam diam nisi, malesuada a
-                            suscipit pharetra, congue id lectus. Sed congue felis non eleifend facilisis. Donec
-                            vulputate, leo id molestie finibus, lorem nibh rutrum odio, id pulvinar odio massa in lacus.
-                        </p>
-                    </div>
-                </div>
+            <div class='step' data-step='4'>
+            </div>
 
-                <div class='step' data-step='4'>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum et metus vel pharetra.
-                            Integer id odio est. Phasellus est lorem, viverra ac bibendum eget, condimentum nec mauris.
-                            Donec gravida suscipit velit a laoreet. Donec ante tortor, sodales et ante at, ullamcorper
-                            varius elit. Proin in diam eu ipsum tincidunt mollis convallis vel tortor. Donec maximus
-                            blandit magna. Proin in ligula quis quam vulputate vestibulum. Nullam diam nisi, malesuada a
-                            suscipit pharetra, congue id lectus. Sed congue felis non eleifend facilisis. Donec
-                            vulputate, leo id molestie finibus, lorem nibh rutrum odio, id pulvinar odio massa in lacus.
-                        </p>
-                    </div>
-                </div>
+            <div class='step' data-step='5'>
+            </div>
 
-                <div class='step' data-step='5'>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum et metus vel pharetra.
-                            Integer id odio est. Phasellus est lorem, viverra ac bibendum eget, condimentum nec mauris.
-                            Donec gravida suscipit velit a laoreet. Donec ante tortor, sodales et ante at, ullamcorper
-                            varius elit. Proin in diam eu ipsum tincidunt mollis convallis vel tortor. Donec maximus
-                            blandit magna. Proin in ligula quis quam vulputate vestibulum. Nullam diam nisi, malesuada a
-                            suscipit pharetra, congue id lectus. Sed congue felis non eleifend facilisis. Donec
-                            vulputate, leo id molestie finibus, lorem nibh rutrum odio, id pulvinar odio massa in lacus.
-                        </p>
-                    </div>
-                </div>
-
-                <div class='step' data-step='6'>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum et metus vel pharetra.
-                            Integer id odio est. Phasellus est lorem, viverra ac bibendum eget, condimentum nec mauris.
-                            Donec gravida suscipit velit a laoreet. Donec ante tortor, sodales et ante at, ullamcorper
-                            varius elit. Proin in diam eu ipsum tincidunt mollis convallis vel tortor. Donec maximus
-                            blandit magna. Proin in ligula quis quam vulputate vestibulum. Nullam diam nisi, malesuada a
-                            suscipit pharetra, congue id lectus. Sed congue felis non eleifend facilisis. Donec
-                            vulputate, leo id molestie finibus, lorem nibh rutrum odio, id pulvinar odio massa in lacus.
-                        </p>
-                    </div>
-                </div>
-
+            <div class='step' data-step='6'>
             </div>
         </section>
 

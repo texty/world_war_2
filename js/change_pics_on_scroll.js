@@ -31,6 +31,7 @@ Promise.all([
     /* скрол вниз*/
     var change_pic_scrolling_down = function (svg_data, current_svg_index, next_svg_index, circles_arr) {
 
+
         /* видаляємо групи з попереднього svg*/
         svg.select("g#content-" + current_svg_index)
             .transition()
@@ -50,8 +51,9 @@ Promise.all([
 
         setTimeout(function () {
             /* міняємо положення та радіус для кружечків*/
-            if(circles_arr) {
-                circles_arr.forEach(function (el) {
+            if(circles_arr && circles_arr != "array_6" ) {
+                var step_arr = arrays_all.filter(function(d){ return d.array === circles_arr});
+                step_arr.forEach(function (el) {
                     svg.select("circle#" + el.id)
                         .transition()
                         .duration(1000)
@@ -110,7 +112,8 @@ Promise.all([
         svg.select("g#content-"+next_svg_index).remove();
 
         if(circles_arr) {
-            circles_arr.forEach(function (el) {
+            var step_arr = arrays_all.filter(function(d){ return d.array === circles_arr});
+            step_arr.forEach(function (el) {
                 svg.select("circle#" + el.id)
                     .transition()
                     .duration(1000)
@@ -137,6 +140,64 @@ Promise.all([
     }
 
 
+    /* усі в */
+    function last_scroll_down(){
+        //red
+        ["circle_1_3", "circle_1_4", "circle_1_5", "circle_1_6",
+            "circle_2_1", "circle_2_2", "circle_2_5", "circle_2_6", "circle_2_7", "circle_2_8", "circle_2_9", "circle_2_10",
+            "circle_4_2", "circle_4_4", "circle_4_6", "circle_4_7", "circle_4_8", "circle_4_9",
+            "circle_6_1"
+        ].forEach(function(el){
+            svg.selectAll("circle#" + el)
+                .transition()
+                .duration(2000)
+                .attr("cx", 704)
+                .attr("cy", 204)
+                .attr("r", 0)
+        });
+
+        //pink
+        ["circle_1_1",
+            "circle_2_3",
+            "circle_4_1", "circle_4_5",
+            "circle_5_1",  "circle_5_2",  "circle_5_3",  "circle_5_4"
+        ].forEach(function(el){
+            svg.selectAll("circle#" + el)
+                .transition()
+                .duration(2000)
+                .attr("cx", 197)
+                .attr("cy", 338)
+                .attr("r", 0)
+        });
+
+        //brown
+        ["circle_1_2",
+            "circle_2_4",
+            "circle_4_3",
+            "circle_6_2",  "circle_6_3"].forEach(function(el){
+            svg.selectAll("circle#" + el)
+                .transition()
+                .duration(2000)
+                .attr("cx", 830)
+                .attr("cy", 503)
+                .attr("r", 0)
+        });
+    }
+
+    function last_scroll_up(){
+        arrays_all.forEach(function(el){
+
+            svg.select("circle#" + el.id)
+                .transition()
+                .duration(2000)
+                .attr("cx", el.cx_to)
+                .attr("cy", el.cy_to)
+                .attr("r", el.r_to)
+        });
+    }
+
+
+
     /* скролама */
     var container = document.querySelector('#scroll');
     var graphic = container.querySelector('.scroll__graphic');
@@ -147,16 +208,16 @@ Promise.all([
 
     function handleStepEnter(r) {
         if (r.index === 0 && r.direction == "up") {
-            change_pic_scrolling_up(c_1_copy, 2, 1, array_1)
+            change_pic_scrolling_up(c_1_copy, 2, 1, "array_1")
         }
         if (r.index === 1 && r.direction == "down") {
-            change_pic_scrolling_down(c_1, 1, 2, array_1)
+            change_pic_scrolling_down(c_1, 1, 2, "array_1")
         }
         if (r.index === 1 && r.direction == "up") {
-            change_pic_scrolling_up(c_1, 3, 2, array_2)
+            change_pic_scrolling_up(c_1, 3, 2, "array_2")
         }
         if (r.index === 2 && r.direction == "down") {
-            change_pic_scrolling_down(c_2, 2, 3, array_2);
+            change_pic_scrolling_down(c_2, 2, 3, "array_2");
         }
         if (r.index === 2 && r.direction == "up") {
             change_pic_scrolling_up(c_2, 4, 3)
@@ -165,22 +226,25 @@ Promise.all([
             change_pic_scrolling_down(c_3, 3, 4)
         }
         if (r.index === 3 && r.direction == "up") {
-            change_pic_scrolling_up(c_3, 5, 4, array_4)
+            change_pic_scrolling_up(c_3, 5, 4, "array_4")
         }
         if (r.index === 4 && r.direction == "down") {
-            change_pic_scrolling_down(c_4, 4, 5, array_4)
+            change_pic_scrolling_down(c_4, 4, 5, "array_4")
         }
         if (r.index === 4 && r.direction == "up") {
-            change_pic_scrolling_up(c_4, 6, 5, array_5)
+            change_pic_scrolling_up(c_4, 6, 5, "array_5")
         }
         if (r.index === 5 && r.direction == "down") {
-            change_pic_scrolling_down(c_5, 5, 6, array_5)
+            change_pic_scrolling_down(c_5, 5, 6, "array_5")
         }
         if (r.index === 5 && r.direction == "up") {
-            change_pic_scrolling_up(c_5, 7, 6, array_6)
+            last_scroll_up();
+            change_pic_scrolling_up(c_5, 7, 6, "array_6");
+
         }
         if (r.index === 6 && r.direction == "down") {
-            change_pic_scrolling_down(c_6, 6, 7, array_6)
+            change_pic_scrolling_down(c_6, 6, 7, "array_6");
+            last_scroll_down();
         }
     }
 
