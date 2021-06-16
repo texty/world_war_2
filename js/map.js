@@ -6,11 +6,11 @@ var map = new maptalks.Map('map', {
     attributionControl: {
       'content': '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'
     },
-    baseLayer: new maptalks.TileLayer('tile', {
-      urlTemplate: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
-      subdomains: ['a', 'b', 'c', 'd'],
-      attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
-    }),
+    // baseLayer: new maptalks.TileLayer('tile', {
+    //   urlTemplate: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+    //   subdomains: ['a', 'b', 'c', 'd'],
+    //   attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
+    // }),
     zoomControl: {
       'position': 'top-left',
       'slider': false,
@@ -47,6 +47,8 @@ var map = new maptalks.Map('map', {
   
   
   ]).then(function (data) {
+
+    new maptalks.VectorLayer('admin', data[0]).addTo(map);
   
   
     window.globalData = data[1];
@@ -118,7 +120,7 @@ var map = new maptalks.Map('map', {
       if (a < 600) {
         return 10
       } else if (a < 2000) {
-        return 15
+        return 20
       }
       else if (a < 100000) {
         return 25
