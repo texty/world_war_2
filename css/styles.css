@@ -11,6 +11,41 @@
   src: url("../font/proxima_bold/proxima-nova-bold.eot?#iefix") format("embedded-opentype"), url("../font/proxima_bold/proxima-nova-bold.woff2") format("woff2"), url("../font/proxima_bold/proxima-nova-bold.woff") format("woff"), url("../font/proxima_bold/proxima-nova-bold.ttf") format("truetype"), url("../font/proxima_bold/proxima-nova-bold.svg#youworkforthem") format("svg");
   font-weight: 600;
   font-style: normal; }
+/* основний текст */
+body {
+  font-family: 'ProximaNova', sans-serif; }
+
+.subtitle {
+  font-size: 25px;
+  text-align: center;
+  width: 80%;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.5; }
+
+.plain-text {
+  font-size: 19px;
+  line-height: 1.6;
+  max-width: 1000px;
+  margin: auto; }
+  .plain-text p {
+    width: 80%;
+    margin: 25px auto 25px auto; }
+  .plain-text .picture {
+    width: 90%;
+    margin: auto; }
+  .plain-text h2 {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center; }
+  .plain-text h2.chapter {
+    text-transform: uppercase; }
+
+.red-text {
+  color: #910000;
+  font-weight: bold; }
+
+/* svg - інтерактив */
 svg text {
   font-family: 'ProximaNova', sans-serif; }
 

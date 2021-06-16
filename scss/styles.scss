@@ -23,6 +23,59 @@
 }
 
 
+/* основний текст */
+
+body {
+  font-family: 'ProximaNova', sans-serif;
+}
+
+.subtitle {
+  font-size: 25px;
+  text-align: center;
+  width: 80%;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.5;
+}
+
+.plain-text {
+  font-size: 19px;
+  line-height: 1.6;
+  max-width: 1000px;
+  margin: auto;
+
+  p {
+    width: 80%;
+    margin: 25px auto 25px auto;
+  }
+
+  .picture {
+    width: 90%;
+    margin: auto;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  h2.chapter {
+    text-transform: uppercase;
+  }
+}
+
+.red-text {
+  color:#910000;
+  font-weight: bold;
+}
+
+
+
+
+
+/* svg - інтерактив */
+
 svg text {
   font-family: 'ProximaNova', sans-serif;
 }
