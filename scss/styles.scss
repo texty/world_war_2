@@ -317,3 +317,45 @@ main {
   opacity: 0.07 !important;
 }
 
+
+
+/* maps */
+.map {
+  background-color: #e5e4cf;
+  width: 100%;
+  height: 1000px;
+}
+
+div#sliderContainer {
+  width: 95%;
+  margin: 30px auto 0 auto;
+}
+
+.rs-container .rs-pointer {
+  background-color: #ff3d4f !important;
+  width: 25px !important;
+  border-radius: 50% !important;
+  height: 25px !important;
+  top: 0 !important;
+}
+
+.rs-container .rs-selected {
+  background-color: #9f987b !important;
+  border: 0px solid #9f987b !important;
+}
+
+.maptalks-tooltip {
+  height:100% !important;
+  width: 300px;
+  white-space: normal !important;
+}
+
+
+
+
+@media(max-width: 800px){
+  div#sliderContainer{
+    width: 80%;
+  }
+}
+
