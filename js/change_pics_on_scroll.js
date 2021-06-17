@@ -286,3 +286,7 @@ d3.select("#show-hidden-1").on("click", function(){
 d3.select("#show-hidden-2").on("click", function(){
     d3.select("#hidden-2").classed("hidden-block", !d3.select("#hidden-2").classed("hidden-block"));
 });
+
+d3.select("#show-hidden-3").on("click", function(){
+    d3.select("#hidden-3").classed("hidden-block", !d3.select("#hidden-3").classed("hidden-block"));
+});

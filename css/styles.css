@@ -48,6 +48,7 @@ a {
   color: inherit; }
 
 .big-picture {
+  margin: 100px auto;
   width: 100%; }
 
 .big-picture img, .picture img {
@@ -55,7 +56,6 @@ a {
 
 .caption {
   width: 90%;
-  margin: auto auto 100px auto;
   text-align: center;
   font-style: italic; }
 
@@ -78,6 +78,7 @@ a {
     font-size: 20px;
     text-align: center; }
   .plain-text h2.chapter {
+    margin-top: 100px;
     text-transform: uppercase; }
 
 .red-text {
@@ -87,12 +88,12 @@ a {
 button {
   margin: auto; }
 
-#show-hidden-1, #show-hidden-2 {
+.show-hidden {
   text-decoration: underline;
   text-align: center;
   padding: 5px 20px;
   cursor: pointer;
-  font-weight: bold; }
+  margin: 0 auto !important; }
 
 .hidden-block {
   height: 0;
@@ -132,7 +133,7 @@ div#sliderContainer {
     width: 80%; } }
 main {
   max-width: 1200px;
-  margin: auto; }
+  margin: 100px auto; }
 
 .font-size-14 {
   font-size: 14px; }
@@ -251,5 +252,13 @@ div#sliderContainer {
 @media (max-width: 800px) {
   div#sliderContainer {
     width: 80%; } }
+.map-title {
+  margin-top: 100px;
+  text-align: center; }
+
+.map-subtitle {
+  text-align: center;
+  font-size: 19px;
+  line-height: 1.6; }
 
 /*# sourceMappingURL=styles.css.map */

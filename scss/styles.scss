@@ -74,6 +74,7 @@ a {
 }
 
 .big-picture {
+  margin: 100px auto;
   width: 100%;
 }
 
@@ -83,7 +84,6 @@ a {
 
 .caption {
   width: 90%;
-  margin: auto auto 100px auto;
   text-align: center;
   font-style:italic;
 }
@@ -115,6 +115,7 @@ a {
   }
 
   h2.chapter {
+    margin-top: 100px;
     text-transform: uppercase;
   }
 }
@@ -128,16 +129,14 @@ button {
   margin: auto;
 }
 
-
-#show-hidden-1, #show-hidden-2 {
+.show-hidden {
   text-decoration: underline;
   text-align: center;
   padding: 5px 20px;
   cursor:pointer;
-  font-weight: bold;
-  //background-color:#737154;
-  //color:#E4E4CE;
+  margin: 0 auto !important;
 }
+
 
 .hidden-block {
   height: 0;
@@ -198,7 +197,7 @@ div#sliderContainer {
 }
 main {
   max-width: 1200px;
-  margin: auto;
+  margin: 100px auto;
 }
 
 .font-size-14 {
@@ -359,3 +358,13 @@ div#sliderContainer {
   }
 }
 
+.map-title {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.map-subtitle {
+  text-align: center;
+  font-size: 19px;
+  line-height: 1.6;
+}
