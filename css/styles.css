@@ -57,6 +57,9 @@ header {
   .plain-text p {
     width: 80%;
     margin: 25px auto 25px auto; }
+    @media (max-width: 800px) {
+      .plain-text p {
+        width: 96%; } }
   .plain-text .picture {
     width: 100%;
     margin: auto; }
