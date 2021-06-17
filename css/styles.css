@@ -13,15 +13,41 @@
   font-style: normal; }
 /* основний текст */
 body {
-  font-family: 'ProximaNova', sans-serif; }
+  font-family: 'ProximaNova', sans-serif;
+  margin: 0;
+  padding: 0; }
+
+header {
+  background-image: url("../pics/01.png");
+  min-height: 50vh;
+  background-size: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex; }
+  header .title {
+    text-align: center;
+    margin: auto; }
+    header .title h1 {
+      text-transform: uppercase;
+      margin: 0 auto;
+      font-size: 4em; }
+    header .title h3 {
+      margin: 0 auto;
+      font-size: 2.5em; }
 
 .subtitle {
   font-size: 25px;
   text-align: center;
-  width: 80%;
-  max-width: 900px;
+  width: 90%;
+  max-width: 1000px;
   margin: auto;
   line-height: 1.5; }
+
+.big-picture {
+  width: 100%; }
+
+.big-picture img, .picture img {
+  width: 100%; }
 
 .plain-text {
   font-size: 19px;
@@ -32,7 +58,7 @@ body {
     width: 80%;
     margin: 25px auto 25px auto; }
   .plain-text .picture {
-    width: 90%;
+    width: 100%;
     margin: auto; }
   .plain-text h2 {
     font-weight: bold;
