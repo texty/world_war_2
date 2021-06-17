@@ -1,12 +1,12 @@
 Promise.all([
-    d3.xml("01.svg"),
-    d3.xml("02.svg"),
-    d3.xml("03.svg"),
-    d3.xml("04.svg"),
-    d3.xml("05.svg"),
-    d3.xml("06.svg"),
-    d3.xml("07.svg"),
-    d3.xml("01_copy.svg")
+    d3.xml("scroll_section/01.svg"),
+    d3.xml("scroll_section/02.svg"),
+    d3.xml("scroll_section/03.svg"),
+    d3.xml("scroll_section/04.svg"),
+    d3.xml("scroll_section/05.svg"),
+    d3.xml("scroll_section/06.svg"),
+    d3.xml("scroll_section/07.svg"),
+    d3.xml("scroll_section/01_copy.svg")
 ]).then(function(data){
 
     /* дивна поведінка xml, якщо не перезберегти у змінну, то можна використати лише один раз*/
@@ -47,6 +47,12 @@ Promise.all([
 
         var content_group = d3.select("#chart-3 > svg > g#content-"+next_svg_index).node().innerHTML;
         var circles_group = d3.select("#chart-3 > svg > g#circles-"+next_svg_index).node().innerHTML;
+
+
+
+        d3.selectAll(".slider-dots span").classed("active", false);
+        d3.select(".slider-dots span:nth-child("+ next_svg_index +")").classed("active", true);
+
 
 
         setTimeout(function () {
@@ -110,6 +116,10 @@ Promise.all([
 
         svg.selectAll("g#circles-"+next_svg_index).remove();
         svg.select("g#content-"+next_svg_index).remove();
+
+
+        d3.selectAll(".slider-dots span").classed("active", false);
+        d3.select(".slider-dots span:nth-child("+ current_svg_index +")").classed("active", true);
 
         if(circles_arr) {
             var step_arr = arrays_all.filter(function(d){ return d.array === circles_arr});
@@ -182,6 +192,9 @@ Promise.all([
                 .attr("cy", 503)
                 .attr("r", 0)
         });
+
+        d3.selectAll(".slider-dots span").classed("active", false);
+        d3.select(".slider-dots span:nth-child("+ 7 +")").classed("active", true);
     }
 
     function last_scroll_up(){
@@ -264,3 +277,12 @@ Promise.all([
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 };
+
+d3.select("#show-hidden-1").on("click", function(){
+    d3.select("#hidden-1").classed("hidden-block", !d3.select("#hidden-1").classed("hidden-block"));
+});
+
+
+d3.select("#show-hidden-2").on("click", function(){
+    d3.select("#hidden-2").classed("hidden-block", !d3.select("#hidden-2").classed("hidden-block"));
+});
