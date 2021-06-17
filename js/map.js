@@ -3,14 +3,6 @@ var mapGheto = new maptalks.Map('mapGheto', {
     center: [33.372536, 49.064028], 
       maxZoom: 12,
       zoom: 7,
-    // attributionControl: {
-    //   'content': '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'
-    // },
-    // baseLayer: new maptalks.TileLayer('tile', {
-    //   urlTemplate: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
-    //   subdomains: ['a', 'b', 'c', 'd'],
-    //   attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
-    // }),
     zoomControl: {
       'position': 'top-left',
       'slider': false,
@@ -46,41 +38,43 @@ var mapVillage = new maptalks.Map('mapVillage', {
   scrollWheelZoom: false
 });
   
-
-  var mySlider = new rSlider({
-    target: '#sampleSlider',
-    values: ["лип.1941", "серп.1941", "вер.1941", "жовт.1941", "лист.1941", "груд.1941",
-      "січ.1942", "лют.1942", "бер.1942", "квіт.1942", "трав.1942", "черв.1942", "лип.1942",
-      "серп.1942", "вер.1942", "жовт.1942", "лист.1942", "груд.1942"],
-    range: false,
-    tooltip: true,
-    scale: true,
-    labels: false,
-    set: ["груд.1942"],
-    // onChange: function (vals) { filter(dict_of_vals[vals]) }
-  });
-  
   Promise.all([
     d3.json("https://raw.githubusercontent.com/texty/upa_map/main/data/UKR_adm1.json"), //0
-    // d3.csv("https://raw.githubusercontent.com/texty/upa_map/main/data/geocode_upa_with_dest.csv"), //1
     d3.csv("gheto_clear.csv"),
+    d3.csv("villages.csv"),
+
   
   
   ]).then(function (data) {
 
     new maptalks.VectorLayer('admin', data[0]).addTo(mapGheto);
+    new maptalks.VectorLayer('admin', data[0]).addTo(mapVillage);
+
   
   
     window.globalData = data[1];
-    const upa_places = new maptalks.VectorLayer('upa').addTo(mapGheto);
-    const obl_markers = new maptalks.VectorLayer('upa_main').addTo(mapGheto);
+    const gheto = new maptalks.VectorLayer('upa').addTo(mapGheto);
+    const village = new maptalks.VectorLayer('upa_main').addTo(mapVillage);
 
 
-    const maxColor = d3.max(data[1].map(d => d.color))
+    const maxColorGheto = d3.max(data[1].map(d => d.color))
+    const maxColorVillage = d3.max(data[1].map(d => d.color))
+
+
+    const ghetoScale = d3.scaleLinear()
+      // .exponent(3)
+      .domain([0, maxColorGheto]) 
+      .range([0, 1])
+      
+    const villageScale = d3.scalePow()
+      .exponent(0.35)
+      .domain([0, maxColorVillage]) 
+      .range([0, 1])
+
 
    
 
-    function getSize(a) {
+    function getSizeGheto(a) {
       if (a < 600) {
         return 10
       } else if (a < 2000) {
@@ -91,11 +85,31 @@ var mapVillage = new maptalks.Map('mapVillage', {
       }
     }
 
-    function getColor(a) {
+    function getColorGheto(a) {
       if (a == -9999) {
         return "#ff8c50"
       } else {
-        return d3.interpolateReds(a/maxColor)
+        return d3.interpolateReds(ghetoScale(a))
+      }
+    }
+
+
+    function getSizeVillage(a) {
+      if (a < 100) {
+        return 10
+      } else if (a < 355) {
+        return 20
+      }
+      else if (a < 800) {
+        return 25
+      }
+    }
+
+    function getColorVillage(a) {
+      if (a == -9999) {
+        return "#ff8c50"
+      } else {
+        return d3.interpolateReds(villageScale(a))
       }
     }
 
@@ -109,16 +123,16 @@ var mapVillage = new maptalks.Map('mapVillage', {
   
     data[1].forEach(function (d) {
       // console.log(d)
-      var src = new maptalks.Marker(
+      var ghetoMarker = new maptalks.Marker(
         [d.lon, d.lat], {
         symbol: {
           'markerType': 'ellipse',
-          'markerFill': getColor(d.color),
+          'markerFill': getColorGheto(d.color),
           'markerFillOpacity': 1,
           'markerLineColor': "#b4b4b4",
           'markerLineWidth': 0,
-          'markerWidth': getSize(d.size),
-          'markerHeight': getSize(d.size)
+          'markerWidth': getSizeGheto(d.size),
+          'markerHeight': getSizeGheto(d.size)
         },
 
       }
@@ -126,191 +140,83 @@ var mapVillage = new maptalks.Map('mapVillage', {
   
       );
   
-      var tip = new maptalks.ui.ToolTip(d.descr);
+      var tipGheto = new maptalks.ui.ToolTip(d.descr, width="80px");
   
-      tip.addTo(src);
+      tipGheto.addTo(ghetoMarker);
   
-      upa_places.addGeometry(src);
+      gheto.addGeometry(ghetoMarker);
+  
+    });
+
+      
+    data[2].forEach(function (d) {
+      // console.log(d)
+      var villageMarker = new maptalks.Marker(
+        [d.lon, d.lat], {
+        symbol: {
+          'markerType': 'ellipse',
+          'markerFill': getColorVillage(d.dead_for_map),
+          'markerFillOpacity': 1,
+          'markerLineColor': "#b4b4b4",
+          'markerLineWidth': 0,
+          'markerWidth': getSizeVillage(d.population_for_map),
+          'markerHeight': getSizeVillage(d.population_for_map)
+        },
+        properties: {
+          "date": d.year
+        }
+      }
+  
+  
+      );
+  
+      var tipVillage = new maptalks.ui.ToolTip(d.descr, width="80px");
+  
+      tipVillage.addTo(villageMarker);
+  
+      village.addGeometry(villageMarker);
   
     });
   
     function filter(date_val) {
-      upa_places._geoList
+      village._geoList
         .forEach(function (feature) {
           ;
   
-          if (feature.properties.date > date_val) {
-            // feature._symbol.markerFill = "#7375d8";
+          if (feature.properties.date > +date_val) {
             feature._symbol.markerFillOpacity = 0
   
             feature.updateSymbol([
               {
-                // 'markerFill': '#7375d8',
-                // 'markerWidth': 100,
-                // 'markerHeight': 100
               }
             ]);
           }
           else {
-            feature._symbol.markerFill = "#ff3d4f";
             feature._symbol.markerFillOpacity = 1
             feature.updateSymbol([
               {
-                // 'markerFill': '#7375d8',
-                // 'markerWidth': 100,
-                // 'markerHeight': 100
               }
             ]);
           }
         });
   
+
   
-      obl_markers._geoList
-        .forEach(function (feature) {
-          ;
-  
-          if (feature.properties.date > date_val) {
-            // feature._symbol.markerFill = "#7375d8";
-            feature._symbol.markerFillOpacity = 0
-            feature._symbol.markerLineWidth = 0
-            feature.updateSymbol([
-              {
-                // 'markerFill': '#7375d8',
-                // 'markerWidth': 100,
-                // 'markerHeight': 100
-              }
-            ]);
-          }
-          else {
-            feature._symbol.markerFill = "#ff3d4f";
-            feature._symbol.markerFillOpacity = 1
-            feature._symbol.markerLineWidth = 4
-            feature.updateSymbol([
-              {
-                // 'markerFill': '#7375d8',
-                // 'markerWidth': 100,
-                // 'markerHeight': 100
-              }
-            ]);
-          }
-        });
-  
-  
-  
-      linesLayer._geoList
-        .forEach(function (feature) {
-  
-          if (feature.properties.date > date_val) {
-            // feature._symbol.markerFill = "#7375d8";
-            feature._symbol.lineOpacity = 0
-            feature.updateSymbol([
-              {
-              }
-            ]);
-          }
-          else {
-            feature._symbol.lineOpacity = 1
-            feature.updateSymbol([
-              {
-              }
-            ]);
-          }
-        });
+
     }
-  
-  
-    // var mySlider = new rSlider({
-    //   target: '#sampleSlider',
-    //   values: ["лип.1941", "серп.1941", "вер.1941", "жовт.1941", "лист.1941", "груд.1941",
-    //     "січ.1942", "лют.1942", "бер.1942", "квіт.1942", "трав.1942", "черв.1942", "лип.1942",
-    //     "серп.1942", "вер.1942", "жовт.1942", "лист.1942", "груд.1942"],
-    //   range: false,
-    //   tooltip: true,
-    //   scale: true,
-    //   labels: false,
-    //   set: ["груд.1942"],
-    //   onChange: function (vals) { filter(dict_of_vals[vals]) }
-    // });
-  
-    // linesLayer.on('click', function (e) {
-    //     debugger;
-    //     alert(e)
-  
-    //     });
-  
-    // map.on('click', function (e) {
-    //   //reset colors
-    //   // upa_places.forEach(function (g) {
-    //   //   g.updateSymbol({
-    //   //     'markerFill' : '#0e595e'
-    //   //   });
-    //   // });
-    //   //identify
-    //   map.identify(
-    //     {
-    //       'coordinate': e.coordinate,
-    //       'layers': [obl_markers],
-    //       // "count": 1
-    //     },
-    //     function (geos) {
-    //       // debugger;
-    //       // console.log(geos.map(d => d.properties.place)),
-    //       // // console.log(geos[0].properties.parent_node)
-    //       // console.log(geos.map(d => d._coordinates))
-    //       // console.log(geos.map(d => d.properties.type))
-  
-  
-  
-    //       geos.forEach(function (g) {
-  
-    //         var html_name = names_of_obl[g.properties.place.trim()];
-    //         // debugger;
-  
-  
-    //         if (html_name) {
-    //           d3.select("div#myModal").style("display", "block");
-  
-    //           d3.html(`https://raw.githubusercontent.com/texty/upa_map/main/htmls/${html_name}`).then(function (d) {
-    //             d3.select("div#myModal div#modal-text").html(d.body.innerHTML)
-    //           });
-  
-    //         }
-  
-    //         // if (g.properties.type == "child") {
-    //         //   console.log(g.properties.place)
-  
-    //         //   d3.select("div#myModal").style("display", "block");
-  
-    //         //   d3.html("htmls/staline.html").then(function (d) {
-    //         //     d3.select("div#myModal div#modal-text").html(d.body.innerHTML)
-    //         //   });
-    //         // }
-    //         // g.updateSymbol({
-    //         //   'markerFill' : '#f00'
-    //         // });
-    //       });
-    //       // if (geos.length === 0) {
-    //       //   return;
-    //       // }
-    //       // geos.forEach(function (g) {
-    //       //   g.updateSymbol({
-    //       //     'markerFill' : '#f00'
-    //       //   });
-    //       // });
-    //     }
-    //   );
-    // });
-  
-  
-  
-    // d3.select("#filter").on("click", function(){
-    //     d3.select("div#myModal").style("display", "block");
-  
-    //     d3.html("htmls/staline.html").then(function (d) { 
-    //         d3.select("div#myModal div#modal-text").html(d.body.innerHTML)
-    //     }); 
-  
-    // });
+
+    var mySlider = new rSlider({
+      target: '#sampleSlider',
+      values: ["1941", "1942", "1943", "1944"],
+      range: false,
+      tooltip: true,
+      scale: true,
+      labels: false,
+      set: ["194"],
+      onChange: function (vals) { filter(vals) }
+    });
+    
+
   
     d3.select("span#close").on("click", function () {
       d3.select("div#myModal").style("display", "none");
