@@ -87,7 +87,7 @@ a {
   max-width: 1000px;
   margin: auto;
 
-  p {
+  p, ol li {
     width: 80%;
     margin: 25px auto 25px auto;
 
@@ -128,7 +128,6 @@ button {
   padding: 5px 20px;
   cursor:pointer;
   font-weight: bold;
-  width: max-content;
   //background-color:#737154;
   //color:#E4E4CE;
 }
