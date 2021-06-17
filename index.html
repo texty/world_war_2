@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.css">
+    <link rel="stylesheet" href="https://texty.org.ua/documents/97/rSlider.css">
+    
+
 </head>
 <body>
+    <div id="mapGheto" class="map"></div>
+
+    <div id="village">
+        <div id="mapVillage" class="map"></div>
+        <div id=sliderContainer>
+            <input type="range " id="sampleSlider" />
+        </div>
+    
+        <div id="target-years">
+            <p>1941</p>
+            <!-- <p>січ.1941</p>
+            <p>лип.1942</p> -->
+            <p>1943</p>
 <header>
     <div class="title">
         <h1>Поле битви - Україна.</h1>
@@ -93,6 +111,14 @@
             </div>
 
         </div>
+    </div>
+
+    <main>
+        <section id='scroll'>
+            <!-- графіка -->
+            <div class='scroll__graphic sticky'>
+
+                <div id="chart"></div>
 
         <!-- текстовий блок -->
         <div class='scroll__text'>
@@ -141,10 +167,13 @@
             <div class='step' data-step='6'>
 
             </div>
+        </section>
 
-        </div>
-    </section>
 
+<<<<<<< HEAD
+        <!-- фантом-контейнер для додавання потрібних svg-->
+        <div id="chart-3"></div>
+=======
     </main>
 
     <div class="plain-text" style="margin-top: 50px;">
@@ -493,16 +522,23 @@
     </ol>
     </div>
 
-
-    <!-- фантом-контейнер для додавання потрібних svg-->
-    <div id="chart-3"></div>
+>>>>>>> 884b95a17bc5139b0424240cc50ce6740ae7aad3
 
 
-    <script src="lib/d3v5_min.js"></script>
-    <script src="lib/scrollama.min.js"></script>
-    <script src="js/arrays.js"></script>
-    <script src="js/change_pics_on_scroll.js"></script>
+        <script src="lib/d3v5_min.js"></script>
+        <script src="lib/scrollama.min.js"></script>
+        <script src="js/arrays.js"></script>
+        <script src="js/change_pics_on_scroll.js"></script>
+        <script src="https://texty.org.ua/documents/98/rSlider.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/maptalks/dist/maptalks.js"></script>
+        <script src="js/map.js"></script>
 
 
+
+<<<<<<< HEAD
+    </main>
+=======
+>>>>>>> 884b95a17bc5139b0424240cc50ce6740ae7aad3
 </body>
+
 </html>
