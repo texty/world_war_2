@@ -207,28 +207,38 @@
    transform="matrix(1 0 0 1 288.8082 410.8531)"
    id="text120">
 		<tspan
-   x="0"
-   y="0"
+   x="-15"
+   y="-16"
    class="fill-white bold-text font-size-14"
-   id="tspan110">137-150 тис.</tspan>
+   id="tspan110">Близько 150 тис.</tspan>
 		<tspan
    x="-33.4"
+   y="0"
+   class="fill-white font-size-14"
+   id="tspan112">У квітні-липні 1947 року </tspan>
+	<tspan
+   x="-35"
    y="16"
    class="fill-white font-size-14"
-   id="tspan112">українців депортувала </tspan>
+   id="tspan114">в рамках операції «Вісла» </tspan>
 		<tspan
    x="-35"
    y="32"
    class="fill-white font-size-14"
+   id="tspan114">українців депортувала</tspan>
+	<tspan
+   x="-35"
+   y="48"
+   class="fill-white font-size-14"
    id="tspan114">комуністична польська </tspan>
 		<tspan
    x="-41.9"
-   y="48"
+   y="64"
    class="fill-white font-size-14"
    id="tspan116">влада з південно-східних </tspan>
 		<tspan
    x="-39.8"
-   y="64"
+   y="80"
    class="fill-white font-size-14"
    id="tspan118">воєводств углиб Польщі</tspan>
 	</text>

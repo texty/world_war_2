@@ -3,7 +3,7 @@ Promise.all([
     d3.xml("scroll_section/02.svg"),
     d3.xml("scroll_section/03.svg"),
     d3.xml("scroll_section/04.svg"),
-    d3.xml("scroll_section/05.svg"),
+    d3.xml("scroll_section/05_new.svg"),
     d3.xml("scroll_section/06.svg"),
     d3.xml("scroll_section/07.svg"),
     d3.xml("scroll_section/01_copy.svg")
@@ -170,7 +170,7 @@ Promise.all([
         ["circle_1_1",
             "circle_2_3",
             "circle_4_1", "circle_4_5",
-            "circle_5_1",  "circle_5_2",  "circle_5_3",  "circle_5_4"
+            "circle_5_1",  "circle_5_2",  "circle_5_3",  "circle_5_4", "circle_5_5"
         ].forEach(function(el){
             svg.selectAll("circle#" + el)
                 .transition()
@@ -183,7 +183,7 @@ Promise.all([
         //brown
         ["circle_1_2",
             "circle_2_4",
-            "circle_4_3",
+            "circle_4_3", "circle_5_6",
             "circle_6_2",  "circle_6_3"].forEach(function(el){
             svg.selectAll("circle#" + el)
                 .transition()

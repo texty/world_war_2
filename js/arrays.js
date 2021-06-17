@@ -132,23 +132,33 @@ const arrays_all = [
 
 
     {id: "circle_5_1", array: "array_5",
-        cx_to:980.1, cy_to:43.9, r_to:29.3,
-        cx_from:762.5, cy_from:337.9, r_from:263.4, opacity:0.65,
+        cx_to:950.8, cy_to:167, r_to:52.6,
+        cx_from:835.5, cy_from:207.7, r_from:198.8, opacity:0.65,
         cx_last: 704, cy_last: 204
     },
     {id: "circle_5_2", array: "array_5",
-        cx_to:950.8, cy_to:167.1, r_to:52.6,
-        cx_from:329.3, cy_from:446, r_from:173.5, opacity:0.65,
+        cx_to:8501, cy_to:180, r_to:40,
+        cx_from:598, cy_from:474.5, r_from:150.5, opacity:0.65,
         cx_last: 704, cy_last: 204
     },
     {id: "circle_5_3", array: "array_5",
-        cx_to:980.1, cy_to:90, r_to:13.8,
-        cx_from:483.4, cy_from:142.8, r_from:68.5, opacity:0.65,
+        cx_to:980, cy_to:44, r_to:29.9,
+        cx_from:494.9, cy_from:205.7, r_from:130.9, opacity:0.65,
         cx_last: 704, cy_last: 204
     },
     {id: "circle_5_4", array: "array_5",
+        cx_to:980, cy_to:90, r_to:14,
+        cx_from:296.6, cy_from:209, r_from:51.7, opacity:0.65,
+        cx_last: 704, cy_last: 204
+    },
+    {id: "circle_5_5", array: "array_5",
         cx_to:1015.1, cy_to:120.9, r_to:7.2,
-        cx_from:430.24225, cy_from:257.33707, r_from:35.2, opacity:0.65,
+        cx_from:418.71249, cy_from:382.29849, r_from:26.5, opacity:0.65,
+        cx_last: 704, cy_last: 204
+    },
+    {id: "circle_5_6", array: "array_5",
+        cx_to:990, cy_to:120.9, r_to:4,
+        cx_from:403.52264, cy_from:464.86502, r_from:15.5, opacity:0.65,
         cx_last: 704, cy_last: 204
     },
 
