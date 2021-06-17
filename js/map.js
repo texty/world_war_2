@@ -140,7 +140,7 @@ var mapVillage = new maptalks.Map('mapVillage', {
   
       );
   
-      var tipGheto = new maptalks.ui.ToolTip(d.descr, width="80px");
+      var tipGheto = new maptalks.ui.ToolTip(d.descr, width="20px");
   
       tipGheto.addTo(ghetoMarker);
   
