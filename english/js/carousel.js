@@ -10,3 +10,7 @@ d3.selectAll(".preview img").on("click", function(){
     d3.select(".gallery-main-pic img").attr("src", clicked_src);
 
 });
+
+d3.select("#show-hidden-3").on("click", function(){
+    d3.select("#hidden-3").classed("hidden-block", !d3.select("#hidden-3").classed("hidden-block"));
+});
