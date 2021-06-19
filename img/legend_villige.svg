@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 25.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 158 88.9"
+   style="enable-background:new 0 0 158 88.9;"
+   xml:space="preserve"
+   sodipodi:docname="legend_villige.svg"
+   inkscape:version="1.1 (ce6663b3b7, 2021-05-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs72" /><sodipodi:namedview
+   id="namedview70"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="8.4683544"
+   inkscape:cx="79.059043"
+   inkscape:cy="44.459641"
+   inkscape:window-width="1848"
+   inkscape:window-height="1016"
+   inkscape:window-x="72"
+   inkscape:window-y="27"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_1" />
+<style
+   type="text/css"
+   id="style2">
+	.st0{clip-path:url(#SVGID_2_);fill:none;stroke:#000000;stroke-width:0.5;}
+	.st1{font-family:'ProximaNova-Regular';}
+	.st2{font-size:6px;}
+	.st3{clip-path:url(#SVGID_4_);fill:url(#SVGID_5_);}
+	.st4{clip-path:url(#SVGID_7_);}
+</style>
+<g
+   id="g16">
+	<defs
+   id="defs5">
+		<rect
+   id="SVGID_1_"
+   x="-0.8"
+   y="5.4"
+   width="157.9"
+   height="71.5" />
+	</defs>
+	<clipPath
+   id="SVGID_2_">
+		<use
+   xlink:href="#SVGID_1_"
+   style="overflow:visible;"
+   id="use7" />
+	</clipPath>
+	<circle
+   class="st0"
+   cx="35.7"
+   cy="48.4"
+   r="5"
+   clip-path="url(#SVGID_2_)"
+   id="circle10" />
+	<circle
+   class="st0"
+   cx="35.7"
+   cy="45.4"
+   r="8"
+   clip-path="url(#SVGID_2_)"
+   id="circle12" />
+	<circle
+   class="st0"
+   cx="35.7"
+   cy="41.9"
+   r="11.5"
+   clip-path="url(#SVGID_2_)"
+   id="circle14" />
+</g>
+<text
+   transform="matrix(1 0 0 1 32.1278 59.9263)"
+   class="st1 st2"
+   id="text18">50</text>
+<text
+   transform="matrix(1 0 0 1 26.7635 28.9243)"
+   class="st1 st2"
+   id="text20">13 000</text>
+<text
+   transform="matrix(1 0 0 1 9.6395 17.1763)"
+   class="st1 st2"
+   id="text22">Кількість населення:</text>
+<text
+   transform="matrix(1 0 0 1 79.6717 17.1763)"
+   class="st1 st2"
+   id="text24">Кількість загиблих:</text>
+<text
+   transform="translate(79.6478,48.1782)"
+   id="text32"><tspan
+     x="0"
+     y="0"
+     class="st1 st2"
+     id="tspan26">Чорним кольором </tspan></text>
+<text
+   transform="matrix(1 0 0 1 79.6478 55.3784)"
+   class="st1 st2"
+   id="text34">позначено повністю </text>
+<text
+   transform="matrix(1 0 0 1 79.6478 62.5776)"
+   class="st1 st2"
+   id="text36">спалені села</text>
+<text
+   transform="matrix(1 0 0 1 75.3817 34.9302)"
+   class="st1 st2"
+   id="text38">1</text>
+<text
+   transform="matrix(1 0 0 1 128.1337 34.9302)"
+   class="st1 st2"
+   id="text40">6 700</text>
+<g
+   id="g57">
+	<defs
+   id="defs43">
+		<rect
+   id="SVGID_3_"
+   x="79.6"
+   y="30.2"
+   width="46.5"
+   height="6" />
+	</defs>
+	<clipPath
+   id="SVGID_4_">
+		<use
+   xlink:href="#SVGID_3_"
+   style="overflow:visible;"
+   id="use45" />
+	</clipPath>
+	
+		<linearGradient
+   id="SVGID_5_"
+   gradientUnits="userSpaceOnUse"
+   x1="-860.7516"
+   y1="593.3801"
+   x2="-859.7516"
+   y2="593.3801"
+   gradientTransform="matrix(46.5 0 0 -46.5 40104.5977 27625.3613)">
+		<stop
+   offset="0"
+   style="stop-color:#EFB9B6"
+   id="stop48" />
+		<stop
+   offset="0.4909"
+   style="stop-color:#D54432"
+   id="stop50" />
+		<stop
+   offset="1"
+   style="stop-color:#351514"
+   id="stop52" />
+	</linearGradient>
+	<rect
+   x="79.6"
+   y="30.2"
+   class="st3"
+   width="46.5"
+   height="6"
+   clip-path="url(#SVGID_4_)"
+   id="rect55" />
+</g>
+<g
+   id="g67">
+	<defs
+   id="defs60">
+		<rect
+   id="SVGID_6_"
+   x="-0.8"
+   y="5.4"
+   width="157.9"
+   height="71.5" />
+	</defs>
+	<clipPath
+   id="SVGID_7_">
+		<use
+   xlink:href="#SVGID_6_"
+   style="overflow:visible;"
+   id="use62" />
+	</clipPath>
+	<path
+   class="st4"
+   d="M84.6,76.9c2.8,0,5-2.2,5-5c0-2.8-2.2-5-5-5c-2.8,0-5,2.2-5,5C79.6,74.7,81.9,76.9,84.6,76.9"
+   clip-path="url(#SVGID_7_)"
+   id="path65" />
+</g>
+</svg>
