@@ -459,6 +459,7 @@ svg text {
 }
 
 /* maps */
+/* maps */
 .map-title {
   margin-top: 100px;
   text-align: center;
@@ -550,6 +551,18 @@ div#target-years {
   margin: auto;
 }
 
+div#target-years {
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 95%;
+  margin: auto;
+}
+
 /* read-more */
 #read-more-title {
   text-align: center;
@@ -594,6 +607,7 @@ div#target-years {
   width: 80%;
   text-align: center;
   margin: auto;
+  color: #E4E4CE;
 }
 
 #read-more #rm-1 {
@@ -603,8 +617,8 @@ div#target-years {
 }
 
 #read-more #rm-2 {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../img/rm-2.png");
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/rm-2.png");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../img/rm-2.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/rm-2.jpg");
   background-size: cover;
 }
 
