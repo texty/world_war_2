@@ -124,13 +124,6 @@ const arrays_all = [
         cx_last: 704, cy_last: 204
     },
 
-    // {id: "circle_4_9", array: "array_4",
-    //     cx_to:915.9, cy_to:30, r_to:10,
-    //     cx_from:422.8, cy_from:231.6, r_from:52.2, opacity:0.72,
-    //     cx_last: 704, cy_last: 204
-    // },
-
-
     {id: "circle_5_1", array: "array_5",
         cx_to:950.8, cy_to:167, r_to:52.6,
         cx_from:835.5, cy_from:207.7, r_from:198.8, opacity:0.65,

@@ -358,12 +358,13 @@ div#sliderContainer {
     #read-more .rm h2 {
       width: 80%;
       text-align: center;
-      margin: auto; }
+      margin: auto;
+      color: #E4E4CE; }
   #read-more #rm-1 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/rm-1.jpg");
     background-size: cover; }
   #read-more #rm-2 {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/rm-2.png");
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/rm-2.jpg");
     background-size: cover; }
   #read-more #rm-3 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/rm-3.jpg");
