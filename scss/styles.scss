@@ -447,6 +447,7 @@ svg text {
 
  #mapLegendVillage, #mapLegendGheto {
   position: relative;
+
 }
 
 #legendVillage, #legendGheto {
@@ -454,6 +455,10 @@ svg text {
   top: 0;
   right: 0;
   width: 25%;
+
+  @media(max-width: 800px){
+    display: none;
+  }
   // color: white;
 }
 

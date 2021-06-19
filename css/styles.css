@@ -488,6 +488,12 @@ svg text {
   width: 25%;
 }
 
+@media (max-width: 800px) {
+  #legendVillage, #legendGheto {
+    display: none;
+  }
+}
+
 div#sliderContainer {
   width: 95%;
   margin: 30px auto 0 auto;
