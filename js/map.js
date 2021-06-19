@@ -1,6 +1,8 @@
 
+const widthOfScreen = window.screen.width;
+
 var mapGheto = new maptalks.Map('mapGheto', {
-    center: [33.372536, 49.064028], 
+    center: [33.372536, 48.464028], 
       maxZoom: 12,
       zoom: 6.4 ,
     zoomControl: {
@@ -20,7 +22,7 @@ var mapGheto = new maptalks.Map('mapGheto', {
 
 
 var mapVillage = new maptalks.Map('mapVillage', {
-  center: [33.372536, 49.064028], 
+  center: [33.372536, 48.464028], 
     maxZoom: 12,
     zoom: 6.4,
   zoomControl: {
