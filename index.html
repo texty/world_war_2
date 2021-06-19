@@ -402,26 +402,31 @@
         </p>
     </div>
 
-
 <div id="map-1">
     <h2 class="map-title">Села, спалені окупантами у 1941-44 роках</h2>
     <p class="map-subtitle">Найбільше населених пунктів спалено там, де діяли партизанські загони. Також багато сіл нацисти знищували під час відступу у 1943-44 роках</p>
     <div id="village">
-        <div id="mapVillage" class="map"></div>
+
+        <div id="mapLegendVillage">
+            <div id="mapVillage" class="map">
+            </div>
+            <img id="legendVillage" src="img/legend_villige.svg" alt="Village">
+        </div>
+
+
         <div id=sliderContainer>
             <input type="range " id="sampleSlider" />
         </div>
 
         <div id="target-years">
             <p>1941</p>
-            <p>1943</p>
+            <p>1944</p>
         </div>
     </div>
 
     <p class="caption" style="text-align: center; margin-bottom: 100px;">На карті враховані та відображені неповні дані, зібрані у  <br>
         <a href="http://resource.history.org.ua/item/0014300" target="_blank">Довіднику про табори, тюрми та гетто на окупованій території України (1941-1944).</a></p>
 </div>
-
 
 
 
@@ -476,12 +481,18 @@
 <div id="map-2">
     <h2 class="map-title">Табори, тюрми і гетто в окупованій Україні</h2>
     <p class="map-subtitle">В’язнів — цивільних та військовополонених — змушували до тяжкої праці, морили голодом, знищували</p>
-    <div id="mapGheto" class="map"></div>
+
+
+    <div id="mapLegendGheto">
+        <div id="mapGheto" class="map"></div>
+        <img id="legendGheto" src="img/legend_tabir.svg" alt="Gheto">
+    </div>
 
 </div>
 
 
-    <div class="plain-text">
+
+<div class="plain-text">
 
 
         <p>Автори довідника у передмові називають його першою спробою зробити класифікацію таборів на окупованій території України у 1941-1944 рр. відповідно до міжнародної класифікації, але попереджають, що в документах іноді трапляються суперечливі характеристики певних таборів - їх зберегли у визначеннях.</p>

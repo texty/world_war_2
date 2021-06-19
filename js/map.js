@@ -2,7 +2,7 @@
 var mapGheto = new maptalks.Map('mapGheto', {
     center: [33.372536, 49.064028], 
       maxZoom: 12,
-      zoom: 7,
+      zoom: 6.4 ,
     zoomControl: {
       'position': 'top-left',
       'slider': false,
@@ -11,7 +11,7 @@ var mapGheto = new maptalks.Map('mapGheto', {
     layers: [
       new maptalks.VectorLayer('v')
     ],
-    minZoom: 7,
+    minZoom: 6,
     maxZoom: 10,
     maxPitch: 0,
     pitch: 0,
@@ -22,7 +22,7 @@ var mapGheto = new maptalks.Map('mapGheto', {
 var mapVillage = new maptalks.Map('mapVillage', {
   center: [33.372536, 49.064028], 
     maxZoom: 12,
-    zoom: 7,
+    zoom: 6.4,
   zoomControl: {
     'position': 'top-left',
     'slider': false,
@@ -31,7 +31,7 @@ var mapVillage = new maptalks.Map('mapVillage', {
   layers: [
     new maptalks.VectorLayer('v')
   ],
-  minZoom: 7,
+  minZoom: 6,
   maxZoom: 10,
   maxPitch: 0,
   pitch: 0,
@@ -47,14 +47,33 @@ var mapVillage = new maptalks.Map('mapVillage', {
   
   ]).then(function (data) {
 
-    new maptalks.VectorLayer('admin', data[0]).addTo(mapGheto);
-    new maptalks.VectorLayer('admin', data[0]).addTo(mapVillage);
+    new maptalks.VectorLayer('admin', data[0])
+    .setStyle({
+      'symbol' : {
+        'polygonFill': "#ffffff",
+        'polygonOpacity': 0.7,
+        'lineColor': 'silver',
+        'lineWidth': 1,
+        'lineOpacity': 0.7
+    }
+    }).addTo(mapGheto);
+    
+    new maptalks.VectorLayer('admin', data[0])
+    .setStyle({
+      'symbol' : {
+        'polygonFill': "#ffffff",
+        'polygonOpacity': 0.7,
+        'lineColor': 'silver',
+        'lineWidth': 1,
+        'lineOpacity': 0.7
+    }
+    }).addTo(mapVillage);
 
   
   
     window.globalData = data[1];
-    const gheto = new maptalks.VectorLayer('upa').addTo(mapGheto);
-    const village = new maptalks.VectorLayer('upa_main').addTo(mapVillage);
+    const gheto = new maptalks.VectorLayer('gheto').addTo(mapGheto);
+    const village = new maptalks.VectorLayer('village').addTo(mapVillage);
 
 
     const maxColorGheto = d3.max(data[1].map(d => d.color))
@@ -62,14 +81,13 @@ var mapVillage = new maptalks.Map('mapVillage', {
 
 
     const ghetoScale = d3.scaleLinear()
-      // .exponent(3)
       .domain([0, maxColorGheto]) 
-      .range([0, 1])
+      .range([0.2, 1])
       
-    const villageScale = d3.scalePow()
-      .exponent(0.35)
-      .domain([0, maxColorVillage]) 
-      .range([0, 1])
+    const villageScale = d3.scaleLinear()
+      // .exponent(0.35)
+      .domain([0, 200]) 
+      .range([0.1, 1])
 
 
    
@@ -89,7 +107,11 @@ var mapVillage = new maptalks.Map('mapVillage', {
       if (a == -9999) {
         return "#ff8c50"
       } else {
-        return d3.interpolateReds(ghetoScale(a))
+        // return d3.interpolateReds(ghetoScale(a))
+
+        var color = d3.interpolateLab("#FF8A7D", "#64000D")(ghetoScale(a))
+        return color
+
       }
     }
 
@@ -109,11 +131,13 @@ var mapVillage = new maptalks.Map('mapVillage', {
       if (a == -9999) {
         return "#ff8c50"
       } else {
-        return d3.interpolateReds(villageScale(a))
+        // return d3.interpolateReds(villageScale(a))
+        var color = d3.interpolateLab("#FF8A7D", "#64000D")(villageScale(a))
+        return color
+       
       }
     }
 
-    // (600.0, 2000.0, 9450
   
     data[1].forEach(function (d) {
       d.lat = +d.lat;
@@ -122,13 +146,13 @@ var mapVillage = new maptalks.Map('mapVillage', {
   
   
     data[1].forEach(function (d) {
-      // console.log(d)
       var ghetoMarker = new maptalks.Marker(
         [d.lon, d.lat], {
         symbol: {
           'markerType': 'ellipse',
           'markerFill': getColorGheto(d.color),
-          'markerFillOpacity': 1,
+          // 'marketFill': 'rgb(135,196,240)',
+          'markerFillOpacity': 0.7,
           'markerLineColor': "#b4b4b4",
           'markerLineWidth': 0,
           'markerWidth': getSizeGheto(d.size),
@@ -139,8 +163,14 @@ var mapVillage = new maptalks.Map('mapVillage', {
   
   
       );
+
   
-      var tipGheto = new maptalks.ui.ToolTip(d.descr, width="20px");
+      var tipGheto = new maptalks.ui.ToolTip(` 
+      <p>Населений пункт: ${d.settlment_name}</p>
+      <p>Деталі: ${d.descr}</p>
+      `).on("click", function(d) { 
+        d.show()
+       } );
   
       tipGheto.addTo(ghetoMarker);
   
@@ -150,13 +180,12 @@ var mapVillage = new maptalks.Map('mapVillage', {
 
       
     data[2].forEach(function (d) {
-      // console.log(d)
       var villageMarker = new maptalks.Marker(
         [d.lon, d.lat], {
         symbol: {
           'markerType': 'ellipse',
           'markerFill': getColorVillage(d.dead_for_map),
-          'markerFillOpacity': 1,
+          'markerFillOpacity': 0.7,
           'markerLineColor': "#b4b4b4",
           'markerLineWidth': 0,
           'markerWidth': getSizeVillage(d.population_for_map),
@@ -169,8 +198,12 @@ var mapVillage = new maptalks.Map('mapVillage', {
   
   
       );
+
   
-      var tipVillage = new maptalks.ui.ToolTip(d.descr, width="80px");
+      var tipVillage = new maptalks.ui.ToolTip(` 
+      <p>Населений пункт: ${d.settlment_name}</p>
+      <p>Деталі: ${d.descr}</p>
+      `);
   
       tipVillage.addTo(villageMarker);
   
@@ -192,7 +225,7 @@ var mapVillage = new maptalks.Map('mapVillage', {
             ]);
           }
           else {
-            feature._symbol.markerFillOpacity = 1
+            feature._symbol.markerFillOpacity = 0.7
             feature.updateSymbol([
               {
               }
@@ -212,7 +245,7 @@ var mapVillage = new maptalks.Map('mapVillage', {
       tooltip: true,
       scale: true,
       labels: false,
-      set: ["194"],
+      set: ["1944"],
       onChange: function (vals) { filter(vals) }
     });
     

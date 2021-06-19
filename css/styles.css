@@ -294,6 +294,7 @@ svg text {
   opacity: 0.07 !important; }
 
 /* maps */
+/* maps */
 .map-title {
   margin-top: 100px;
   text-align: center; }
@@ -306,8 +307,17 @@ svg text {
 .map {
   background-color: #e5e4cf;
   width: 100%;
-  height: 1000px;
+  height: 80vh;
   margin: 100px auto; }
+
+#mapLegendVillage, #mapLegendGheto {
+  position: relative; }
+
+#legendVillage, #legendGheto {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%; }
 
 div#sliderContainer {
   width: 95%;
@@ -317,11 +327,19 @@ div#sliderContainer {
       width: 80%; } }
 
 .rs-container .rs-pointer {
-  background-color: #ff3d4f !important;
+  background-color: red;
+  border: 1px solid #9f987b !important;
   width: 25px !important;
   border-radius: 50% !important;
   height: 25px !important;
   top: 0 !important; }
+
+.rs-container .rs-bg, .rs-container .rs-selected {
+  /* background-color: #eee; */
+  border: 1px solid #9f987b !important; }
+
+.rs-container .rs-scale span::before {
+  background-color: #9f987b; }
 
 .rs-container .rs-selected {
   background-color: #9f987b !important;
@@ -331,6 +349,15 @@ div#sliderContainer {
   height: 100% !important;
   width: 300px;
   white-space: normal !important; }
+  .maptalks-tooltip p {
+    margin: 0; }
+
+div#target-years {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto; }
 
 /* read-more */
 #read-more-title {
