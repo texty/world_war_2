@@ -766,4 +766,37 @@ footer li, footer p {
   width: 30px;
   margin-right: 10px;
 }
+
+/* англ. версія */
+.gallery-main-pic {
+  width: 60%;
+  margin: auto;
+}
+
+.preview {
+  width: 100%;
+  max-width: 1120px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.preview img {
+  width: 150px;
+  border: 1px solid grey;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.preview img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.gallery-hidden-pic {
+  display: none;
+}
 /*# sourceMappingURL=styles.css.map */
