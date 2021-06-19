@@ -164,10 +164,20 @@ var mapVillage = new maptalks.Map('mapVillage', {
   
       );
 
+      var details  = ""
+
+
+      if (d.descr.length > 3 ){
+        details = d.descr
+      }
+      else {
+        details = "Немає інформації" 
+      }
+
   
       var tipGheto = new maptalks.ui.ToolTip(` 
       <p>Населений пункт: ${d.settlment_name}</p>
-      <p>Деталі: ${d.descr}</p>
+      <p>Деталі: ${details}</p>
       `).on("click", function(d) { 
         d.show()
        } );
@@ -199,10 +209,20 @@ var mapVillage = new maptalks.Map('mapVillage', {
   
       );
 
+      var details  = ""
+
+
+      if (d.descr.length > 3 ){
+        details = d.descr
+      }
+      else {
+        details = "Немає інформації" 
+      }
+
   
       var tipVillage = new maptalks.ui.ToolTip(` 
       <p>Населений пункт: ${d.settlment_name}</p>
-      <p>Деталі: ${d.descr}</p>
+      <p>Деталі: ${details}</p>
       `);
   
       tipVillage.addTo(villageMarker);
