@@ -444,8 +444,9 @@ svg text {
   margin: 100px auto;
 }
 
-#mapLegendVillage, #mapLegendGheto {
+ #mapLegendVillage, #mapLegendGheto {
   position: relative;
+
 }
 
 #legendVillage, #legendGheto {
@@ -453,6 +454,10 @@ svg text {
   top: 0;
   right: 0;
   width: 25%;
+
+  @media(max-width: 800px){
+    display: none;
+  }
   // color: white;
 }
 
@@ -479,7 +484,7 @@ div#sliderContainer {
 }
 
 .rs-container .rs-scale span::before {
-  background-color: #9f987b;
+  background-color: black;
 }
 
 .rs-container .rs-selected {
@@ -495,6 +500,14 @@ div#sliderContainer {
   p {
     margin: 0;
   }
+}
+
+div#target-years { 
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
 }
 
 div#target-years {
