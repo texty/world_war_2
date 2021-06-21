@@ -176,14 +176,28 @@ var mapVillage = new maptalks.Map('mapVillage', {
         details = "Немає інформації" 
       }
 
+
   
       var tipGheto = new maptalks.ui.ToolTip(` 
       <p>Населений пункт: ${d.settlment_name}</p>
+      <p>Область: ${d.oblast}</p>
       <p>Деталі: ${details}</p>
-      `).on("click", function(d) { 
-        d.show()
-       } );
-  
+      `)
+
+      tipGheto.addTo = function addTo(owner) {
+        if (maptalks.ui.ToolTip.isSupport(owner)) {
+          owner.on('click', this.onMouseMove, this);
+          // owner.on('mouseout', this.onMouseOut, this);
+          return maptalks.ui.UIComponent.prototype.addTo.call(this, owner);
+        } else {
+          throw new Error('Invalid geometry or UIMarker the tooltip is added to.');
+        }
+      };
+
+      mapGheto.on("click", function(){
+        tipGheto.hide()
+      })
+        
       tipGheto.addTo(ghetoMarker);
   
       gheto.addGeometry(ghetoMarker);
@@ -224,8 +238,23 @@ var mapVillage = new maptalks.Map('mapVillage', {
   
       var tipVillage = new maptalks.ui.ToolTip(` 
       <p>Населений пункт: ${d.settlment_name}</p>
+      <p>Область: ${d.oblast}</p>
       <p>Деталі: ${details}</p>
       `);
+
+
+      tipVillage.addTo = function addTo(owner) {
+        if (maptalks.ui.ToolTip.isSupport(owner)) {
+          owner.on('click', this.onMouseMove, this);
+          return maptalks.ui.UIComponent.prototype.addTo.call(this, owner);
+        } else {
+          throw new Error('Invalid geometry or UIMarker the tooltip is added to.');
+        }
+      };
+
+      mapVillage.on("click", function(){
+        tipVillage.hide()
+      })
   
       tipVillage.addTo(villageMarker);
   
