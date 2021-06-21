@@ -7,6 +7,7 @@
 	</g>
 
 	<g id="content-7">
+		<text transform="matrix(1 0 0 1 43 52.2095)" class="bold-text font-size-36">Разом:</text>
 		<path class="brown" d="M892.3,342.1v0.1c-76.9,0-139.3,62.4-139.3,139.3s62.4,139.2,139.3,139.2s139.3-62.4,139.3-139.3
 			S969.3,342.1,892.3,342.1z"/>
 		<circle transform="matrix(0.7071 -0.7071 0.7071 0.7071 61.5771 557.8672)" class="pink" cx="704.2" cy="204.6" r="176.4" />
