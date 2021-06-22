@@ -1,10 +1,17 @@
 
-const widthOfScreen = window.screen.width;
+var widthOfScreen = window.screen.width;
+
+
+if (widthOfScreen > 800) {
+  var zoomLevel = 6.4
+} else {
+  var zoomLevel = 4.5
+}
 
 var mapGheto = new maptalks.Map('mapGheto', {
     center: [33.372536, 48.464028], 
       maxZoom: 12,
-      zoom: 6.4 ,
+      zoom: zoomLevel ,
     zoomControl: {
       'position': 'top-left',
       'slider': false,
@@ -13,7 +20,7 @@ var mapGheto = new maptalks.Map('mapGheto', {
     layers: [
       new maptalks.VectorLayer('v')
     ],
-    minZoom: 6,
+    minZoom: zoomLevel,
     maxZoom: 10,
     maxPitch: 0,
     pitch: 0,
@@ -24,7 +31,7 @@ var mapGheto = new maptalks.Map('mapGheto', {
 var mapVillage = new maptalks.Map('mapVillage', {
   center: [33.372536, 48.464028], 
     maxZoom: 12,
-    zoom: 6.4,
+    zoom: zoomLevel,
   zoomControl: {
     'position': 'top-left',
     'slider': false,
@@ -33,7 +40,7 @@ var mapVillage = new maptalks.Map('mapVillage', {
   layers: [
     new maptalks.VectorLayer('v')
   ],
-  minZoom: 6,
+  minZoom: zoomLevel,
   maxZoom: 10,
   maxPitch: 0,
   pitch: 0,
@@ -243,6 +250,8 @@ var mapVillage = new maptalks.Map('mapVillage', {
       <p>Населений пункт: ${d.settlment_name}</p>
       <p>Область: ${d.oblast}</p>
       <p>Деталі: ${details}</p>
+      <p>Загиблі (за різними даними): ${d.dead_descr}</p>
+      <p>Спалено дворів (будинків): ${d.building_destroyed}</p>
       `);
 
 
