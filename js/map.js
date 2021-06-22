@@ -129,12 +129,15 @@ var mapVillage = new maptalks.Map('mapVillage', {
       }
     }
 
-    function getColorVillage(a) {
+    function getColorVillage(a, destroyed=false) {
       if (a == -9999) {
         return "#ff8c50"
+      } 
+      else if (destroyed == 1) {
+        return "#000000"
       } else {
         // return d3.interpolateReds(villageScale(a))
-        var color = d3.interpolateLab("#FF8A7D", "#64000D")(villageScale(a))
+        var color = d3.interpolateLab("#FF8A7D", "#a10217")(villageScale(a))
         return color
        
       }
@@ -210,7 +213,7 @@ var mapVillage = new maptalks.Map('mapVillage', {
         [d.lon, d.lat], {
         symbol: {
           'markerType': 'ellipse',
-          'markerFill': getColorVillage(d.dead_for_map),
+          'markerFill': getColorVillage(d.dead_for_map, d.completely_destroyed),
           'markerFillOpacity': 0.7,
           'markerLineColor': "#b4b4b4",
           'markerLineWidth': 0,
